@@ -7,6 +7,7 @@ It's main purpose is to simplify development of html-templates for usage in serv
 ## Goals
 - work on Mac/Lin/Win with as few outside-dependencies as possible (**WIP**), in order to make it more accessible to Frontend-Juniors and Backend-Developers
 - HTML-Files have to be viewable without a running local-server
+- A complete build must not exceed three seconds
 
 ## Features
 - HTML-Files are being processed by **Froot** (included), a file-processor which includes files into other files
