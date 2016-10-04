@@ -6,4 +6,4 @@ rm ./dist/js/*.js
 
 ./devtools/froot ./src/js/app.js > ./dist/app.js
 
-cat ./src/js/libraries/*.js ./src/js/modules/*.js ./dist/app.js > ./dist/js/app.js
+cat ./src/js/libraries/*.js ./dist/app.js > ./dist/js/app.js

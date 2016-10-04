@@ -1,11 +1,13 @@
-var appname = {};
+// Initialize Globals
+var app = app || {};
+// Initialize eventEmitter
+// ToDo Antonio: Check if better put in head-js
 eventEmitter = new EventEmitter();
-var appname = appname || {};
-appname.colorizer = {
+// This is where all the self-made modules are inserted by Froot
+app.colorizer = {
 init: function() {
 $('button').click(function() {
-appname.colorizer.colorizeBackground();
-appname.colorizer.moveHeadline();
+app.colorizer.colorizeBackground();
 console.log("Booo here it goes");
 });
 },
@@ -14,5 +16,6 @@ $('body').css('background', '#ebcdef');
 },
 };
 $(function() {
-appname.colorizer.init();
+//Initialize all the js
+app.colorizer.init();
 });

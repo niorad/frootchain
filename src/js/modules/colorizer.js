@@ -1,11 +1,8 @@
-var appname = appname || {};
-
-appname.colorizer = {
+app.colorizer = {
 
   init: function() {
     $('button').click(function() {
-      appname.colorizer.colorizeBackground();
-      appname.colorizer.moveHeadline();
+      app.colorizer.colorizeBackground();
       console.log("Booo here it goes");
     });
   },
