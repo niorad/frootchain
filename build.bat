@@ -18,7 +18,6 @@ echo.
 echo ----------------------------------------
 echo.
 
-
 echo ...Cleaning old JS-Files
 echo.
 del dist\js\*.js
@@ -39,7 +38,6 @@ echo.
 devtools\sassc.exe src\css\app.scss > dist\css\app.css
 
 
-
 echo.
 echo ----------------------------------------
 echo.
@@ -50,5 +48,5 @@ rmdir dist\assets /s /q
 md dist\assets
 xcopy /s /e /h /y src\assets dist\assets
 
-
+exit /B
 
