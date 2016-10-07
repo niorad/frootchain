@@ -1,52 +1,60 @@
 
 echo " -------------------------"
-echo "| Frootchain is building… |"
+echo "|  Frootend is building.. |"
 echo " -------------------------"
 echo " "
 
 
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 
+
+echo "...Cleaning old Dist-Folder"
+rm -rf ./dist
+
+mkdir ./dist
+mkdir ./dist/css
+mkdir ./dist/js
+mkdir ./dist/assets
+
+
+
 # ---------------
 # HTML
 # ---------------
-rm ./dist/*.html
-echo "Building HTML-Templates, hold on…"
 for file in ./src/templates/*.html
 do
   ./devtools/froot ./src/templates/$(basename "$file") > ./dist/$(basename "$file")
 done
-echo "✔ HTML Done"
+echo "......✔ HTML Done"
 
 
 # ---------------
 # JS
 # ---------------
-echo "Concatenating JS-Files, just a sec…"
-rm ./dist/js/*.js
+echo "...Compiling JS-Files"
 ./devtools/froot ./src/js/app.js > ./dist/js/_modules.js
 cat ./src/js/libraries/*.js > ./dist/js/_lib.js
 cat ./dist/js/_lib.js ./dist/js/_modules.js > ./dist/js/app.js
 rm ./dist/js/_lib.js
 rm ./dist/js/_modules.js
-echo "✔ JS Done"
+echo "......✔ JS Done"
 
 
 
 # ---------------
 # SCSS
 # ---------------
-echo "SASS is being handled. Should be done shortly…"
+echo "...Building SASS-Files to CSS"
 ./devtools/sassc ./src/css/app.scss > ./dist/css/app.css
-echo "✔ SASS Done"
+echo "......✔ SASS Done"
 
 
 # ---------------
 # ASSETS
 # ---------------
-echo "Copying static Assets…"
+echo "...Copying Assets"
 cp -R ./src/assets/ ./dist/assets/
-echo "✔ Assets done"
+echo "......✔ Assets done"
 
 
 

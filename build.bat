@@ -48,5 +48,10 @@ rmdir dist\assets /s /q
 md dist\assets
 xcopy /s /e /h /y src\assets dist\assets
 
+echo .
+echo ----------------------------------------
+echo All done!
+echo ----------------------------------------
+
 exit /B
 
