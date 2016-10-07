@@ -24,8 +24,11 @@ echo "✔ HTML Done"
 # ---------------
 echo "Concatenating JS-Files, just a sec…"
 rm ./dist/js/*.js
-./devtools/froot ./src/js/app.js > ./dist/js/app.js
-cat ./src/js/libraries/*.js ./dist/js/app.js > ./dist/js/app.js
+./devtools/froot ./src/js/app.js > ./dist/js/_modules.js
+cat ./src/js/libraries/*.js > ./dist/js/_lib.js
+cat ./dist/js/_lib.js ./dist/js/_modules.js > ./dist/js/app.js
+rm ./dist/js/_lib.js
+rm ./dist/js/_modules.js
 echo "✔ JS Done"
 
 
