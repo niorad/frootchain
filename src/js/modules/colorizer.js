@@ -1,14 +1,17 @@
-app.colorizer = {
+app.colorizer = (function() {
 
-  init: function() {
-    $('button').click(function() {
-      app.colorizer.colorizeBackground();
-      console.log("Booo here it goes");
+  var init = function() {
+    $('button').click(() => {
+      colorizeBackground();
     });
-  },
+  };
 
-  colorizeBackground: function() {
+  var colorizeBackground = function() {
     $('body').css('background', '#ebcdef');
-  },
+  };
 
-};
+  return {
+    init: init
+  };
+
+})();

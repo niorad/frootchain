@@ -1,10 +1,14 @@
-app.utilities = {
+app.utilities = (function() {
 
-  elementExists: function(selector) {
+  var elementExists = (selector) => {
     if( $(selector).length > 0) {
       return true;
     };
     return false;
-  },
+  };
 
-};
+  return {
+    exists: elementExists
+  }
+
+})();

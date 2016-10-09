@@ -17663,23 +17663,37 @@ return jQuery;
 /* The CSS spec mandates that the translateX/Y/Z transforms are %-relative to the element itself -- not its parent.
  Velocity, however, doesn't make this distinction. Thus, converting to or from the % unit with these subproperties
  will produce an inaccurate conversion value. The same issue exists with the cx/cy attributes of SVG circles and ellipses. */
+"use strict";
 // Initialize Globals
 var app = app || {};
 // Initialize eventEmitter
 // ToDo Antonio: Check if better put in head-js
 eventEmitter = new EventEmitter();
 // This is where all the self-made modules are inserted by Froot
-app.colorizer = {
-init: function() {
-$('button').click(function() {
-app.colorizer.colorizeBackground();
-console.log("Booo here it goes");
+app.colorizer = (function() {
+var init = function() {
+$('button').click(() => {
+colorizeBackground();
 });
-},
-colorizeBackground: function() {
-$('body').css('background', '#ebcdef');
-},
 };
+var colorizeBackground = function() {
+$('body').css('background', '#ebcdef');
+};
+return {
+init: init
+};
+})();
+app.utilities = (function() {
+var elementExists = (selector) => {
+if( $(selector).length > 0) {
+return true;
+};
+return false;
+};
+return {
+exists: elementExists
+}
+})();
 $(function() {
 //Initialize all the js
 app.colorizer.init();

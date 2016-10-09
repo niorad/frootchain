@@ -52,8 +52,9 @@ echo "......✔ SASS Done"
 # ---------------
 # ASSETS
 # ---------------
-echo "...Copying Assets"
+echo "...Copying Assets & Favicon"
 cp -R ./src/assets/ ./dist/assets/
+cp ./src/assets/favicon/favicon.ico ./dist/favicon.ico
 echo "......✔ Assets done"
 
 
