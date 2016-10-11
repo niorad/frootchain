@@ -1,13 +1,38 @@
 @import "reset";
+@import "buttons";
+
+html, body {
+  font-size: 16px;
+}
 
 body {
   background: #eee;
   color: #333;
   margin: 0;
   padding: 0;
+}
 
-  h1 {
-    font-size: 2rem;
-  }
+header, footer {
+  text-align: center;
+  margin: 1rem;
 
 }
+
+h1 {
+  font: {
+    weight: normal;
+    family: garamond;
+    size: 2rem;
+  }
+  margin-bottom: 1rem;
+}
+
+#main {
+  max-width: 300px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: white;
+  text-align: center;
+
+}
+

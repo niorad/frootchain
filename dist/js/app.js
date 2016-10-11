@@ -17670,9 +17670,12 @@ var app = app || {};
 // ToDo Antonio: Check if better put in head-js
 eventEmitter = new EventEmitter();
 // This is where all the self-made modules are inserted by Froot
+/**
+* Colorizes the background. This is an example-module.
+*/
 app.colorizer = (function() {
 var init = function() {
-$('button').click(() => {
+$('button').click(function() {
 colorizeBackground();
 });
 };
@@ -17684,7 +17687,7 @@ init: init
 };
 })();
 app.utilities = (function() {
-var elementExists = (selector) => {
+var elementExists = function(selector) {
 if( $(selector).length > 0) {
 return true;
 };

@@ -1,6 +1,6 @@
 app.utilities = (function() {
 
-  var elementExists = (selector) => {
+  var elementExists = function(selector) {
     if( $(selector).length > 0) {
       return true;
     };
