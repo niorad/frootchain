@@ -1,3 +1,6 @@
+/**
+ * A collection of reusable utilities
+ */
 app.utilities = (function() {
 
   var elementExists = function(selector) {

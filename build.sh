@@ -1,7 +1,10 @@
+DBLUE='\033[0;34m'
+BLUE='\033[1;34m'
+GREEN='\033[1;32m'
+NC='\033[0m'
 
-echo " -------------------------"
-echo "|  Frootend is building.. |"
-echo " -------------------------"
+echo " "
+echo "${BLUE}Frootend is building..${NC}"
 echo " "
 
 
@@ -21,11 +24,12 @@ mkdir ./dist/assets
 # ---------------
 # HTML
 # ---------------
+echo "...Compiling HTML-Files"
 for file in ./src/templates/*.html
 do
   ./devtools/froot ./src/templates/$(basename "$file") > ./dist/$(basename "$file")
 done
-echo "......✔ HTML Done"
+echo "......${GREEN}✔${NC} HTML Done"
 
 
 # ---------------
@@ -37,7 +41,7 @@ cat ./src/js/libraries/*.js > ./dist/js/_lib.js
 cat ./dist/js/_lib.js ./dist/js/_modules.js > ./dist/js/app.js
 rm ./dist/js/_lib.js
 rm ./dist/js/_modules.js
-echo "......✔ JS Done"
+echo "......${GREEN}✔${NC} JS Done"
 
 
 
@@ -46,7 +50,7 @@ echo "......✔ JS Done"
 # ---------------
 echo "...Building SASS-Files to CSS"
 ./devtools/sassc ./src/css/app.scss > ./dist/css/app.css
-echo "......✔ SASS Done"
+echo "......${GREEN}✔${NC} SASS Done"
 
 
 # ---------------
@@ -55,12 +59,11 @@ echo "......✔ SASS Done"
 echo "...Copying Assets & Favicon"
 cp -R ./src/assets/ ./dist/assets/
 cp ./src/assets/favicon/favicon.ico ./dist/favicon.ico
-echo "......✔ Assets done"
+echo "......${GREEN}✔${NC} Assets done"
 
 
 
 echo " "
-echo "------------------------------"
-echo "All done!"
-echo "------------------------------"
+echo "${BLUE}All done!${NC}"
 echo "\n"
+

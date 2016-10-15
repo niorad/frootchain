@@ -1,3 +1,7 @@
+@import "utilities/clearfix";
+@import "utilities/colors";
+@import "utilities/breakpoints";
+@import "utilities/grid";
 @import "reset";
 @import "buttons";
 
@@ -6,7 +10,7 @@ html, body {
 }
 
 body {
-  background: #eee;
+  background: $color-page-background;
   color: #333;
   margin: 0;
   padding: 0;
@@ -15,24 +19,45 @@ body {
 header, footer {
   text-align: center;
   margin: 1rem;
-
 }
 
 h1 {
+  margin-bottom: 1rem;
+
   font: {
     weight: normal;
     family: garamond;
     size: 2rem;
   }
-  margin-bottom: 1rem;
 }
 
 #main {
-  max-width: 300px;
+  max-width: 1300px;
   margin: 1rem auto;
   padding: 1rem;
   background: white;
   text-align: center;
 
+  @include respond-to(medium-screens) {
+    background: $color-page-background-mobile;
+  }
+}
+
+.gridtest-container {
+  @include grid-container;
+}
+
+.gridtest-row {
+  @include grid-row;
+}
+
+.gridtest-half {
+  @include grid-col(2);
+  background: rgba(0,0,0,.2);
+}
+
+.gridtest-quarter {
+  @include grid-col(4);
+  background: rgba(0,0,0,.2);
 }
 
