@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Initialize Globals
 var app = app || {};

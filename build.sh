@@ -1,3 +1,5 @@
+#!/bin/sh
+
 DBLUE='\033[0;34m'
 BLUE='\033[1;34m'
 GREEN='\033[1;32m'
@@ -39,8 +41,6 @@ echo "...Compiling JS-Files"
 ./devtools/froot ./src/js/app.js > ./dist/js/_modules.js
 cat ./src/js/libraries/*.js > ./dist/js/_lib.js
 cat ./dist/js/_lib.js ./dist/js/_modules.js > ./dist/js/app.js
-rm ./dist/js/_lib.js
-rm ./dist/js/_modules.js
 echo "......${GREEN}✔${NC} JS Done"
 
 

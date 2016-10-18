@@ -20,3 +20,7 @@ $gutter: 1rem;
   position: relative;
   min-height: 1px;
 }
+
+@mixin grid-offset($width) {
+  margin-left: calc( 100% / #{$width} );
+}
