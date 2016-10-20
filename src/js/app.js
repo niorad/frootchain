@@ -12,6 +12,7 @@ var $components = $('[data-component]');
 
 $(function() {
   $components.each(function() {
-    app.components[$(this).data('component')].init($(this));
+    var newComponent = app.components[$(this).data('component')]();
+    newComponent.init($(this));
   });
 });

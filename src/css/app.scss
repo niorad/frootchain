@@ -45,7 +45,6 @@ h1 {
   margin: 1rem auto;
   padding: 1rem;
   background: white;
-  text-align: center;
 
   @include respond-to(medium-screens) {
     //background: $color-page-background-mobile;
