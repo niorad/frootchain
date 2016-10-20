@@ -2,17 +2,16 @@
 
 // Initialize Globals
 var app = app || {};
-
+app.components = {};
 
 // This is where all the self-made modules are inserted by Froot
 
-// >>> "./modules/colorizer.js"
-// >>> "./modules/utilities.js"
+// >>> "./components/013_accordion.js"
 
+var $components = $('[data-component]');
 
 $(function() {
-
-  //Initialize all the js
-  app.colorizer.init();
-
+  $components.each(function() {
+    app.components[$(this).data('component')].init($(this));
+  });
 });

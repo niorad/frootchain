@@ -4,6 +4,8 @@
 @import "utilities/grid";
 @import "buttons";
 
+@import "components/013_accordion";
+
 html {
   box-sizing: border-box;
 }
@@ -19,7 +21,6 @@ html, body {
 }
 
 body {
-  background: $color-page-background;
   color: #333;
   margin: 0;
   padding: 0;
@@ -47,7 +48,7 @@ h1 {
   text-align: center;
 
   @include respond-to(medium-screens) {
-    background: $color-page-background-mobile;
+    //background: $color-page-background-mobile;
   }
 }
 

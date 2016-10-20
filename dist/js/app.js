@@ -10221,38 +10221,31 @@ return jQuery;
 'use strict';
 // Initialize Globals
 var app = app || {};
+app.components = {};
 // This is where all the self-made modules are inserted by Froot
-/**
- * Colorizes the background. This is an example-module.
- */
-app.colorizer = (function() {
-  var init = function() {
-    $('button').click(function() {
-      colorizeBackground();
-    });
+app.components.accordion = (function() {
+  var base = {};
+  var init = function($baseElement) {
+    console.log('Initializing Accordion on ', $baseElement);
+    base.$element = $baseElement;
+    base.settings = base.$element.data('componentSettings');
+    bindToggleButtons();
   };
-  var colorizeBackground = function() {
-    $('body').css('background', '#ebcdef');
+  var bindToggleButtons = function() {
+    base.$element.find('[data-accordion-toggler]').click(function() {
+      $(this)
+        .closest('[data-accordion-item-container]')
+        .find('[data-accordion-content]')
+        .slideToggle();
+    });
   };
   return {
     init: init
   };
 })();
-/**
- * A collection of reusable utilities
- */
-app.utilities = (function() {
-  var elementExists = function(selector) {
-    if( $(selector).length > 0) {
-      return true;
-    }
-    return false;
-  };
-  return {
-    exists: elementExists
-  };
-})();
+var $components = $('[data-component]');
 $(function() {
-  //Initialize all the js
-  app.colorizer.init();
+  $components.each(function() {
+    app.components[$(this).data('component')].init($(this));
+  });
 });

@@ -9,6 +9,12 @@
     family: serif;
     weight: bold; }
 
+.accordion {
+  list-style: none outside none;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
 html {
   box-sizing: border-box; }
 
@@ -20,7 +26,6 @@ html, body {
   font-family: 'helvetica'; }
 
 body {
-  background: #eee;
   color: #333;
   margin: 0;
   padding: 0; }
@@ -40,9 +45,6 @@ h1 {
   padding: 1rem;
   background: white;
   text-align: center; }
-  @media only screen and (min-width: 321px) and (max-width: 1023px) {
-    #main {
-      background: #efabfc; } }
 
 .gridtest-container {
   padding-left: 1rem;
