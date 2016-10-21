@@ -4,10 +4,13 @@ echo ----------------------------------------
 echo          Frootend is building...
 echo ----------------------------------------
 echo.
-echo ...Cleaning old HTML-Files
-echo.
 
-del dist\*.html
+rmdir dist /s /q
+md dist
+md dist\js
+md dist\css
+md dist\assets
+
 echo ...Compiling new HTML-Files
 
 for %%i in (src\templates\*.html) do (
@@ -18,16 +21,10 @@ echo.
 echo ----------------------------------------
 echo.
 
-echo ...Cleaning old JS-Files
-echo.
-del dist\js\*.js
 echo ...Combining JS-Files
 echo.
-devtools\froot.exe src\js\app.js > dist\js\modules.js
-copy src\js\libraries\*.js dist\js\libraries.js
-copy dist\js\libraries.js+dist\js\modules.js dist\js\app.js
-del dist\js\modules.js
-del dist\js\libraries.js
+devtools\froot.exe src\js\app.js > dist\js\_modules.js
+type src\js\libraries\*.js > dist\js\_lib.js
 
 echo.
 echo ----------------------------------------
@@ -44,8 +41,6 @@ echo.
 
 echo ...Copying Assets
 echo.
-rmdir dist\assets /s /q
-md dist\assets
 xcopy /s /e /h /y src\assets dist\assets
 
 echo .

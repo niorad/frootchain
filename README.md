@@ -21,3 +21,4 @@ It's main purpose is to speed up and simplify development of html-templates for 
 
 ## Dependencies/Prerequisites
 - Currently the only dependency is fswatch, which is needed for watching file-changes on macOS and Linux. The Windows-Version works without it.
+- If you get DLL-Errors on Windows, try installing the Windows-10 Standalone SDK from https://developer.microsoft.com/de-de/windows/downloads/windows-10-sdk
